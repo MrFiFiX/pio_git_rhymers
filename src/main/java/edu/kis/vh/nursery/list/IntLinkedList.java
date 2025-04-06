@@ -2,23 +2,54 @@ package edu.kis.vh.nursery.list;
 
 public class IntLinkedList {
 
-    Node last;
-    int i;
+    protected static class Node {
+
+        private final int valueNode;
+        private Node prevNode;
+        private Node nextNode;
+
+        public Node(int i) {
+            valueNode = i;
+        }
+
+        public int getValueNode() {
+            return valueNode;
+        }
+
+        public Node getPrevNode() {
+            return prevNode;
+        }
+
+        public void setPrevNode(Node prevNode) {
+            this.prevNode = prevNode;
+        }
+
+        public Node getNextNode() {
+            return nextNode;
+        }
+
+        public void setNextNode(Node nextNode) {
+            this.nextNode = nextNode;
+        }
+    }
+
+    private Node lastNode;
+    private int currentIndex; //Todo: delete that line - pool is not used
 
     public void push(int i) {
-        if (last == null)
-            last = new Node(i);
+        if (lastNode == null)
+            lastNode = new Node(i);
         else {
-            last.next = new Node(i);
-            last.next.prev = last;
-            last = last.next;
+            lastNode.setNextNode(new Node(i));
+            lastNode.getNextNode().setPrevNode(lastNode);
+            lastNode = lastNode.getNextNode();
         }
     }
 
     public boolean isEmpty() {
-        return last == null;
+        return lastNode == null;
     }
-
+    //Todo: delete or implement proper - method always return false and is not used
     public boolean isFull() {
         return false;
     }
@@ -26,14 +57,14 @@ public class IntLinkedList {
     public int top() {
         if (isEmpty())
             return -1;
-        return last.value;
+        return lastNode.getValueNode();
     }
 
     public int pop() {
         if (isEmpty())
             return -1;
-        int ret = last.value;
-        last = last.prev;
+        int ret = lastNode.getValueNode();
+        lastNode = lastNode.getPrevNode();
         return ret;
     }
 
