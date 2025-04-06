@@ -2,8 +2,39 @@ package edu.kis.vh.nursery.list;
 
 public class IntLinkedList {
 
+    protected static class Node {
+
+        private final int valueNode;
+        private Node prevNode;
+        private Node nextNode;
+
+        public Node(int i) {
+            valueNode = i;
+        }
+
+        public int getValueNode() {
+            return valueNode;
+        }
+
+        public Node getPrevNode() {
+            return prevNode;
+        }
+
+        public void setPrevNode(Node prevNode) {
+            this.prevNode = prevNode;
+        }
+
+        public Node getNextNode() {
+            return nextNode;
+        }
+
+        public void setNextNode(Node nextNode) {
+            this.nextNode = nextNode;
+        }
+    }
+
     private Node lastNode;
-    private int currentIndex;
+    private int currentIndex; //Todo: delete that line - pool is not used
 
     public void push(int i) {
         if (lastNode == null)
@@ -18,7 +49,7 @@ public class IntLinkedList {
     public boolean isEmpty() {
         return lastNode == null;
     }
-
+    //Todo: delete or implement proper - method always return false and is not used
     public boolean isFull() {
         return false;
     }
