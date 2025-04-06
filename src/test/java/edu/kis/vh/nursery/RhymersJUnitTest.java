@@ -2,7 +2,7 @@ package edu.kis.vh.nursery;
 
 import org.junit.Assert;
 import org.junit.Test;
-
+//Testy dzialaja poprawnie po dokonaniu modyfikacji klas.
 public class RhymersJUnitTest {
 
     @Test
