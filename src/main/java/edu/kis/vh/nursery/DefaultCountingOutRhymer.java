@@ -9,6 +9,7 @@ public class DefaultCountingOutRhymer {
 	private static final int ARRAY_SIZE = 12;
 	private static final int EMPTY_TOTAL = -1;
 	private static final int DEFAULT_VALUE = -1;
+	//Todo: needs refactor - static size array can be replaced by IntLinkedList
 	/**
 	 * Array of numbers of size {@link #ARRAY_SIZE}
 	 */

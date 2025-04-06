@@ -34,7 +34,7 @@ public class IntLinkedList {
     }
 
     private Node lastNode;
-    private int currentIndex;
+    private int currentIndex; //Todo: delete that line - pool is not used
 
     public void push(int i) {
         if (lastNode == null)
@@ -49,7 +49,7 @@ public class IntLinkedList {
     public boolean isEmpty() {
         return lastNode == null;
     }
-
+    //Todo: delete or implement proper - method always return false and is not used
     public boolean isFull() {
         return false;
     }
