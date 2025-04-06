@@ -4,10 +4,11 @@ public class DefaultCountingOutRhymer {
 
 	private static final int ARRAY_SIZE = 12;
 	private static final int EMPTY_TOTAL = -1;
+  private static final int DEFAULT_VALUE = -1;
 	
 	private final int[] numbers = new int[ARRAY_SIZE];
 
-	public int total = EMPTY_TOTAL;
+	private int total = EMPTY_TOTAL;
 
 	public void countIn(int in) {
 		if (!isFull())
@@ -15,7 +16,6 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public boolean callCheck() {
-		int DEFAULT_VALUE = EMPTY_TOTAL;
 		return total == DEFAULT_VALUE;
 	}
 
